@@ -3,10 +3,10 @@ import { createServer, type Server } from "http";
 import session from "express-session";
 import connectPg from "connect-pg-simple";
 import cors from "cors";
-import { storage } from "./storage";
-import { insertUserSchema, loginUserSchema, insertGameScoreSchema } from "./schema";
+import { storage } from "./storage.js";
+import { insertUserSchema, loginUserSchema, insertGameScoreSchema } from "./schema.js";
 import bcrypt from "bcrypt";
-import { sendSubscriptionNotification, sendTestEmail } from "./emailService";
+import { sendSubscriptionNotification, sendTestEmail } from "./emailService.js";
 import { MercadoPagoConfig, Preference, Payment } from 'mercadopago';
 
 // Initialize MercadoPago client

@@ -11,8 +11,8 @@ import {
   type InsertSuggestion,
   type SuggestionLike,
   type InsertSuggestionLike
-} from "./schema";
-import { db } from "./db";
+} from "./schema.js";
+import { db } from "./db.js";
 import { eq, desc, and, sql } from "drizzle-orm";
 
 export interface IStorage {
