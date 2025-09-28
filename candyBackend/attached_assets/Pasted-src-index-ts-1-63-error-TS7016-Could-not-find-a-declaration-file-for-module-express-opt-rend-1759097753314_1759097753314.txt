@@ -1,0 +1,59 @@
+src/index.ts(1,63): error TS7016: Could not find a declaration file for module 'express'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/express/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/express` if it exists or add a new declaration (.d.ts) file containing `declare module 'express';`
+src/index.ts(9,10): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/index.ts(9,15): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/index.ts(9,20): error TS7006: Parameter 'next' implicitly has an 'any' type.
+src/index.ts(15,24): error TS7006: Parameter 'bodyJson' implicitly has an 'any' type.
+src/index.ts(15,34): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+src/index.ts(54,22): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/index.ts(54,27): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/index.ts(59,17): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/index.ts(59,22): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(1,30): error TS7016: Could not find a declaration file for module 'express'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/express/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/express` if it exists or add a new declaration (.d.ts) file containing `declare module 'express';`
+src/routes.ts(3,21): error TS7016: Could not find a declaration file for module 'express-session'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/express-session/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/express-session` if it exists or add a new declaration (.d.ts) file containing `declare module 'express-session';`
+src/routes.ts(4,23): error TS7016: Could not find a declaration file for module 'connect-pg-simple'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/connect-pg-simple/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/connect-pg-simple` if it exists or add a new declaration (.d.ts) file containing `declare module 'connect-pg-simple';`
+src/routes.ts(5,18): error TS7016: Could not find a declaration file for module 'cors'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/cors/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/cors` if it exists or add a new declaration (.d.ts) file containing `declare module 'cors';`
+src/routes.ts(8,20): error TS7016: Could not find a declaration file for module 'bcrypt'. '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/bcrypt/bcrypt.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/bcrypt` if it exists or add a new declaration (.d.ts) file containing `declare module 'bcrypt';`
+src/routes.ts(22,16): error TS2665: Invalid module name in augmentation. Module 'express-session' resolves to an untyped module at '/opt/render/project/src/candyBackend/candyBackend/backend/node_modules/express-session/index.js', which cannot be augmented.
+src/routes.ts(81,23): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(81,28): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(86,36): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(86,41): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(129,33): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(129,38): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(161,36): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(161,41): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(185,31): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(185,36): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(212,28): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(212,33): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(213,26): error TS7006: Parameter 'err' implicitly has an 'any' type.
+src/routes.ts(222,47): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(222,52): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(319,47): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(319,52): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(398,38): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(398,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(420,39): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(420,44): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(435,38): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(435,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(449,51): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(449,56): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(461,45): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(461,50): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(472,39): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(472,44): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(487,35): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(487,40): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(510,38): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(510,43): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(528,39): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(528,44): error TS7006: Parameter 'res' implicitly has an 'any' type.
+src/routes.ts(543,48): error TS7006: Parameter 'req' implicitly has an 'any' type.
+src/routes.ts(543,53): error TS7006: Parameter 'res' implicitly has an 'any' type.

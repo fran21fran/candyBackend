@@ -1,0 +1,41 @@
+# Render Blueprint para CandyWeb Backend
+# Copiar este archivo a la raíz del repositorio del backend
+
+services:
+  # Backend Web Service
+  - type: web
+    name: candBackend
+    env: node
+    region: ohio  # US East
+    plan: starter  # Free tier
+    
+    # Build & Deploy
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    
+    # Auto-deploy settings
+    autoDeploy: true
+    
+    # Health check
+    healthCheckPath: /health
+    
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8000
+      - key: DATABASE_URL
+        sync: false  # Set manually in Render dashboard
+      - key: SESSION_SECRET
+        generateValue: true  # Auto-generate secure value
+      - key: FRONTEND_URL
+        sync: false  # Set manually (your Vercel URL)
+      - key: BACKEND_URL
+        sync: false  # Set manually (your Render URL)
+      - key: VERCEL_PROJECT_NAME
+        sync: false  # Optional: your Vercel project name
+      - key: SENDGRID_API_KEY
+        sync: false  # Optional: for emails
+      - key: MERCADOPAGO_ACCESS_TOKEN
+        sync: false  # Optional: for payments
