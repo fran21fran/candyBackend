@@ -42,12 +42,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     allowedOrigins.push(new RegExp(`^https://.*-${process.env.VERCEL_PROJECT_NAME}.*\\.vercel\\.app$`));
   }
 
-  app.use(cors({
+  /*app.use(cors({
     origin: allowedOrigins,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  }));
+  }));*/
+
+  app.use(cors({
+  origin: function (origin, callback) {
+    // Permitir requests sin origen (Postman, curl, etc.)
+    if (!origin) return callback(null, true);
+
+    // Validar origen
+    const isAllowed = allowedOrigins.some(o => {
+      if (typeof o === 'string') return o === origin;
+      if (o instanceof RegExp) return o.test(origin);
+      return false;
+    });
+
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked for origin: ${origin}`));
+    }
+  },
+  credentials: true, // permite cookies
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+}));
 
   // PostgreSQL session store configuration
   const pgStore = connectPg(session);
