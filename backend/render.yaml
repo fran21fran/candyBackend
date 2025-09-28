@@ -4,13 +4,13 @@
 services:
   # Backend Web Service
   - type: web
-    name: candyweb-backend
+    name: candBackend
     env: node
     region: ohio  # US East
     plan: starter  # Free tier
     
     # Build & Deploy
-    buildCommand: npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     
     # Auto-deploy settings
