@@ -33,7 +33,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const allowedOrigins: (string | RegExp)[] = [
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://candyfrontend11.vercel.app',
+    'https://candyfrontend12.vercel.app',
     ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
   ];
 
