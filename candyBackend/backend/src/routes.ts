@@ -478,7 +478,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!req.session.userId) {
         return res.status(401).json({ message: "Not authenticated" });
       }
-
+      console.log("🔍 session userId:", req.session.userId);
       const scores = await storage.getUserScores(req.session.userId);
       res.json(scores);
     } catch (error) {
