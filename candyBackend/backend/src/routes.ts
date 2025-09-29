@@ -8,7 +8,7 @@ import { insertUserSchema, loginUserSchema, insertGameScoreSchema } from "./sche
 import bcrypt from "bcrypt";
 import { sendSubscriptionNotification, sendTestEmail } from "./emailService.js";
 import { MercadoPagoConfig, Preference, Payment } from 'mercadopago';
-import { pool } from "./db.js";
+import { client } from "./db.js";
 
 
 // Initialize MercadoPago client
@@ -108,14 +108,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
   app.get("/test-db", async (req, res) => {
-    try {
-      const result = await pool.query("SELECT NOW()");
-      res.json({ success: true, time: result.rows[0] });
-    } catch (err) {
-      console.error("Error de conexión a la DB:", err);
-      res.status(500).json({ error: "DB connection failed" });
-    }
-  });
+  try {
+    const result = await client`SELECT NOW()`;
+    res.json({ success: true, time: result[0].now });
+  } catch (err) {
+    console.error("❌ Error de conexión a Supabase:", err);
+    res.status(500).json({ error: "DB connection failed" });
+  }
+});
 
   
 
