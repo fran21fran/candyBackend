@@ -83,7 +83,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     ttl: 24 * 60 * 60, // 24 hours in seconds
     tableName: "sessions",
   });
-
+  sessionStore.on("error", (err) => {
+    console.error("❌ Error en sessionStore (PostgreSQL):", err);
+  });
   // Require SESSION_SECRET in production
   if (process.env.NODE_ENV === "production" && !process.env.SESSION_SECRET) {
     throw new Error("SESSION_SECRET environment variable must be set in production");
@@ -105,6 +107,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Health check endpoint
   app.get("/healthz", (_, res) => {
+    console.log("🟢 Health check recibido");
     res.status(200).send("ok");
     //res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
