@@ -8,6 +8,8 @@ import { insertUserSchema, loginUserSchema, insertGameScoreSchema } from "./sche
 import bcrypt from "bcrypt";
 import { sendSubscriptionNotification, sendTestEmail } from "./emailService.js";
 import { MercadoPagoConfig, Preference, Payment } from 'mercadopago';
+import { pool } from "./db.js";
+
 
 // Initialize MercadoPago client
 let mercadoPagoClient: MercadoPagoConfig | null = null;
