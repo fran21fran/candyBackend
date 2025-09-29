@@ -206,7 +206,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const user = await storage.getUser(req.session.userId);
       if (!user) {
-        req.session.userId = undefined;
+        //req.session.userId = undefined;
         return res.status(200).json(null);
       }
       return res.status(200).json({
@@ -217,7 +217,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Get user error:", error);
-      req.session.userId = undefined;
+      //req.session.userId = undefined;
       return res.status(200).json(null);
     }
   });
@@ -232,7 +232,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const user = await storage.getUser(req.session.userId);
       if (!user) {
-        req.session.userId = undefined;
+        //req.session.userId = undefined;
         return res.status(200).json(null);
       }
 
@@ -244,7 +244,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Get user error:", error);
-      req.session.userId = undefined;
+      //req.session.userId = undefined;
       return res.status(200).json(null);
     }
   });
