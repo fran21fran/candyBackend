@@ -104,7 +104,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   }));
 
   // Health check endpoint
-  app.get("/health", (_, res) => {
+  app.get("/healthz", (_, res) => {
     res.status(200).send("ok");
     //res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
