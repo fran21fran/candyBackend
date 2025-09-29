@@ -105,6 +105,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/health", (req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
+  app.get("/test-db", async (req, res) => {
+    try {
+      const result = await pool.query("SELECT NOW()");
+      res.json({ success: true, time: result.rows[0] });
+    } catch (err) {
+      console.error("Error de conexión a la DB:", err);
+      res.status(500).json({ error: "DB connection failed" });
+    }
+  });
+
+  
 
   // Register route
   app.post("/api/register", async (req, res) => {
