@@ -179,7 +179,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const validPassword = await bcrypt.compare(loginData.password, user.password);
       if (!validPassword) {
-        return res.status(401).json({ message: "Credenciales inválidas" });
+        return res.status(401).json("Credenciales inválidas");
       }
 
       req.session.userId = user.id;
